@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+// eslint-disable-next-line
 import {createStore} from 'redux';
 
 class App extends Component {
