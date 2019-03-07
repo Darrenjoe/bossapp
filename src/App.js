@@ -17,8 +17,23 @@ function Sex(props) {
 }
 
 class Age extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      ages: [13, 24, 31, 16,]
+    }
+  }
   render() {
-    return <h2>{this.props.age}</h2>
+    return (
+      <div>
+        <h2>{this.props.age}</h2>
+        <ul>
+          {this.state.ages.map(v => {
+            return <li key={v}>{v}</li>
+          })}
+        </ul>
+      </div>
+    )
   }
 }
 
