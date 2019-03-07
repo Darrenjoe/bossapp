@@ -5,15 +5,20 @@ class App extends React.Component {
     return (
       <div>
         <h1>Darren</h1>
-        <Age></Age>
+        <Age age="24"></Age>
+        <Sex sex="男"></Sex>
       </div>
     )
   }
 }
+
+function Sex(props) {
+  return <h2>性别：{props.sex}</h2>
+}
+
 class Age extends React.Component {
   render() {
-    const age = '24'
-    return <h2>{age}</h2>
+    return <h2>{this.props.age}</h2>
   }
 }
 
