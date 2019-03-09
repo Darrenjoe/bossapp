@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from 'antd-mobile'
+import {Button, List} from 'antd-mobile'
 
 class App extends React.Component {
   render() {
@@ -35,11 +35,13 @@ class Age extends React.Component {
       <div>
         <h2>{this.props.age}</h2>
         <Button type="primary" onClick={this.addAge}>Add Age</Button>
-        <ul>
+        <List renderHeader={()=> '年纪'}>
           {this.state.ages.map(v => {
-            return <li key={v}>{v}</li>
+            return (
+              <List.Item>{v}</List.Item>
+            )
           })}
-        </ul>
+        </List>
       </div>
     )
   }
