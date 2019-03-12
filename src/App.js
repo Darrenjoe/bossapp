@@ -38,7 +38,7 @@ class Age extends React.Component {
         <List renderHeader={()=> '年纪'}>
           {this.state.ages.map(v => {
             return (
-              <List.Item>{v}</List.Item>
+              <List.Item key={v}>{v}</List.Item>
             )
           })}
         </List>
