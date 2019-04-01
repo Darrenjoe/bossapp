@@ -124,14 +124,14 @@
       "react-app"
     ],
     "plugins": [
+      "transform-decorators",
       [
         "import",
         {
           "libraryName": "antd-mobile",
           "style": "css"
         }
-      ],
-      ["decorators-legacy"]
+      ]
     ]
   },
   "devDependencies": {
