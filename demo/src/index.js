@@ -1,5 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import Food from './Food'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Food />, document.getElementById('root'))
