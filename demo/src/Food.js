@@ -22,9 +22,12 @@ class Food extends Component {
           {
             this.state.list.map((item, index) => {
               return (
-                <div>
-                  <FoodItem />
-                </div>
+                  <FoodItem
+                    content={item}
+                    key={index + item}
+                    index={index}
+                    deleteItem={this.deleteItem.bind(this)}
+                  />
               )
             })
           }
