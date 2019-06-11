@@ -15,7 +15,13 @@ class Food extends Component {
       <Fragment>
         <div>
           <label htmlFor="editor">增加菜品:</label>
-          <input id="editor" className="input" value={this.state.inputValue} onChange={this.inputChange.bind(this)} />
+          <input
+            id="editor"
+            className="input"
+            value={this.state.inputValue}
+            onChange={this.inputChange.bind(this)}
+            ref={(input) => {this.input=input}}
+          />
           <button onClick={this.addList.bind(this)}>增加菜单</button>
         </div>
         <ul>
@@ -38,7 +44,7 @@ class Food extends Component {
 
   inputChange(e) {
     this.setState({
-      inputValue: e.target.value
+      inputValue: this.input.value
     })
   }
 
