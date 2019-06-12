@@ -10,7 +10,30 @@ class Food extends Component {
       list: ['干锅肥肠', '佛跳墙']
     }
   }
+
+  componentWillMount() {
+    console.log('组件即将挂载到页面');
+  }
+
+  componentDidMount() {
+    console.log('组件完成挂载');
+  }
+
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate1')
+    return true
+  }
+
+  componentWillUpdate() {
+    console.log('componentWillUpdate2')
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate4')
+  }
+
   render() {
+    console.log('组件挂载中3');
     return (
       <Fragment>
         <div>
