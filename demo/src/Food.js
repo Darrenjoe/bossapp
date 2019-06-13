@@ -11,26 +11,26 @@ class Food extends Component {
     }
   }
 
-  componentWillMount() {
-    console.log('组件即将挂载到页面');
-  }
+  // componentWillMount() {
+  //   console.log('组件即将挂载到页面');
+  // }
 
-  componentDidMount() {
-    console.log('组件完成挂载');
-  }
+  // componentDidMount() {
+  //   console.log('组件完成挂载');
+  // }
 
-  shouldComponentUpdate() {
-    console.log('shouldComponentUpdate1')
-    return true
-  }
+  // shouldComponentUpdate() {
+  //   console.log('shouldComponentUpdate1')
+  //   return true
+  // }
 
-  componentWillUpdate() {
-    console.log('componentWillUpdate2')
-  }
+  // componentWillUpdate() {
+  //   console.log('componentWillUpdate2')
+  // }
 
-  componentDidUpdate() {
-    console.log('componentDidUpdate4')
-  }
+  // componentDidUpdate() {
+  //   console.log('componentDidUpdate4')
+  // }
 
   render() {
     console.log('组件挂载中3');

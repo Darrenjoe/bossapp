@@ -9,12 +9,21 @@ class FoodItem extends Component {
   }
   // 组件第一次存在于dom中，函数不会执行
   // 如果已经存在于Dom中，函数才会被执行
-  componentWillReceiveProps() {
-    console.log('child-componentWillReceiveProps');
-  }
+  // componentWillReceiveProps() {
+  //   console.log('child-componentWillReceiveProps');
+  // }
 
-  componentWillUnmount() {
-    console.log('child-componentWillUnmount');
+  // componentWillUnmount() {
+  //   console.log('child-componentWillUnmount');
+  // }
+
+  // 组件优化
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.content !== this.props.content) {
+      return true
+    } else {
+      return false
+    }
   }
 
   render() { 
