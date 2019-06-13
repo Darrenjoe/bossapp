@@ -26,7 +26,8 @@ class FoodItem extends Component {
     }
   }
 
-  render() { 
+  render() {
+    console.log(1);
     return (
       <li onClick={this.handeClick}>
         {this.props.foodName}{this.props.content}
