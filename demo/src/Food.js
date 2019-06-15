@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import './index.css'
 import FoodItem from './FoodItem'
+import axios from 'axios'
 
 class Food extends Component {
   constructor(props) {
@@ -15,9 +16,15 @@ class Food extends Component {
   //   console.log('组件即将挂载到页面');
   // }
 
-  // componentDidMount() {
-  //   console.log('组件完成挂载');
-  // }
+  componentDidMount() {
+    axios.post('https://web-api.juejin.im/v3/web/wbbr/bgeda')
+      .then((res) => {
+        console.log('axios 获取数据成功' + JSON.stringify(res))
+      })
+      .catch((error) => {
+        console.log('axios 获取数据失败:' + error)
+      })
+  }
 
   // shouldComponentUpdate() {
   //   console.log('shouldComponentUpdate1')
