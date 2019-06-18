@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import './index.css'
 import FoodItem from './FoodItem'
 import axios from 'axios'
+import Boss from './Boss'
 
 class Food extends Component {
   constructor(props) {
@@ -68,6 +69,7 @@ class Food extends Component {
             })
           }
         </ul>
+        <Boss></Boss>
       </Fragment>
     )
   }
