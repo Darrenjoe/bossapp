@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { CSSTransition } from 'react-transition-group'
+
 class Boss extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,13 @@ class Boss extends Component {
   render() { 
     return (
       <div>
-        <div className={this.state.isShow?'show':'hide'}>顶级食材-鹿茸</div>
+        <CSSTransition
+          in={this.state.isShow}
+          timeout={2000}
+          classNames="boss-text"
+        >
+          <div>顶级食材-鹿茸</div>
+        </CSSTransition>
         <div>
           <button onClick={this.toToggole}>采购食材</button>
         </div>
