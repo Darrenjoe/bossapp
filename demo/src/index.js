@@ -1,5 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Food from './Food'
+import TodoList from './TodoList'
 
-ReactDOM.render(<Food />, document.getElementById('root'))
+ReactDOM.render(<TodoList />, document.getElementById('root'))
