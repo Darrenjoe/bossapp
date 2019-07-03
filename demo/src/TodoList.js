@@ -8,6 +8,7 @@ class TodoList extends Component {
     super(props);
     this.state = store.getState();
     this.changeInputValue = this.changeInputValue.bind(this);
+    this.clickBtn = this.clickBtn.bind(this);
     this.storeChange = this.storeChange.bind(this);
     store.subscribe(this.storeChange);
   }
@@ -18,9 +19,12 @@ class TodoList extends Component {
           <Input
             placeholder={this.state.inputValue}
             style={{ width: "250px", marginRight: "10px" }}
+            value={this.state.inputValue}
             onChange={this.changeInputValue}
           />
-          <Button type="primary">Add</Button>
+          <Button type="primary" onClick={this.clickBtn}>
+            Add
+          </Button>
         </div>
         <div style={{ margin: "10px", width: "300px" }}>
           <List
@@ -43,6 +47,11 @@ class TodoList extends Component {
 
   storeChange() {
     this.setState(store.getState());
+  }
+
+  clickBtn() {
+    const action = { type: "addItem" };
+    store.dispatch(action);
   }
 }
 
