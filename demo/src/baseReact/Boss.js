@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { CSSTransition } from 'react-transition-group'
+import React, { Component } from "react";
+import { CSSTransition } from "react-transition-group";
 
 class Boss extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isShow: true
-    }
-    this.toToggole = this.toToggole.bind(this)
+    };
+    this.toToggole = this.toToggole.bind(this);
   }
-  render() { 
+  render() {
     return (
       <div>
         <CSSTransition
@@ -29,8 +29,8 @@ class Boss extends Component {
   toToggole() {
     this.setState({
       isShow: !this.state.isShow
-    })
+    });
   }
 }
- 
+
 export default Boss;
