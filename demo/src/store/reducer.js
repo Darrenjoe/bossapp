@@ -1,7 +1,7 @@
-import { CHANGE_INPUT, ADD_ITEM, DELETE_ITEM } from "./actionTyps";
+import { CHANGE_INPUT, ADD_ITEM, DELETE_ITEM, GET_LIST } from "./actionTyps";
 const defaultState = {
   inputValue: "Write Something",
-  list: ["代码编写", "看看书", "看看报纸"]
+  list: []
 };
 export default (state = defaultState, action) => {
   // Reducer 里只能接受state，不能改变state
@@ -19,6 +19,11 @@ export default (state = defaultState, action) => {
   if (action.type === DELETE_ITEM) {
     let newState = JSON.parse(JSON.stringify(state));
     newState.list.splice(action.index, 1);
+    return newState;
+  }
+  if (action.type === GET_LIST) {
+    let newState = JSON.parse(JSON.stringify(state));
+    newState.list = action.data.data.list;
     return newState;
   }
   return state;

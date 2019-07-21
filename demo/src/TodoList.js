@@ -4,9 +4,11 @@ import store from "./store";
 import {
   changeInputAction,
   addItemAction,
-  deleteItemAciton
+  deleteItemAciton,
+  getListAction
 } from "./store/actionCreators";
 import TodoListUI from "./TodoListUI";
+import axios from "axios";
 
 class TodoList extends Component {
   constructor(props) {
@@ -28,6 +30,18 @@ class TodoList extends Component {
         deleteItem={this.deleteItem}
       />
     );
+  }
+
+  componentDidMount() {
+    axios
+      .get(
+        "https://www.easy-mock.com/mock/5cfcce489dc7c36bd6da2c99/xiaojiejie/getList"
+      )
+      .then(res => {
+        const data = res.data;
+        const action = getListAction(data);
+        store.dispatch(action);
+      });
   }
 
   changeInputValue(e) {
