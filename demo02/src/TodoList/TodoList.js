@@ -6,7 +6,10 @@ class TodoList extends Component {
     return (
       <div>
         <div>
-          <input value={this.props.inputValue} />
+          <input
+            value={this.props.inputValue}
+            onChange={this.props.inputChange}
+          />
           <button>提交</button>
         </div>
         <ul>
@@ -23,7 +26,19 @@ const stateProps = state => {
   };
 };
 
+const dispatchToProps = dispatch => {
+  return {
+    inputChange(e) {
+      let action = {
+        type: "change_input",
+        value: e.target.value
+      };
+      dispatch(action);
+    }
+  };
+};
+
 export default connect(
   stateProps,
-  null
+  dispatchToProps
 )(TodoList);
