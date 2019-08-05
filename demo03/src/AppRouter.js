@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Index from "./pages/Index";
 import List from "./pages/List";
 
+// 设置规则  传递至 接收值 显示内容
+
 function AppRouter() {
   return (
     <Router>
@@ -15,7 +17,7 @@ function AppRouter() {
         </li>
       </ul>
       <Route path="/" exact component={Index} />
-      <Route path="/list" component={List} />
+      <Route path="/list/:id" component={List} />
     </Router>
   );
 }

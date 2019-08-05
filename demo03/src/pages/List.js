@@ -6,7 +6,13 @@ class Index extends Component {
     this.state = {};
   }
   render() {
-    return <h2>List-Page</h2>;
+    return <h2>List-Page-{this.state.id}</h2>;
+  }
+
+  componentDidMount() {
+    console.log(this.props);
+    let tempId = this.props.match.params.id;
+    this.setState({ id: tempId });
   }
 }
 
