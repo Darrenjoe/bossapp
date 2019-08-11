@@ -1,25 +1,32 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Index from "./pages/Index";
-import List from "./pages/List";
-import Home from "./pages/Home";
-
-// 设置规则  传递至 接收值 显示内容
+import Index from "./Pages/Index";
+import Video from "./Pages/Video";
+import "./index.css";
 
 function AppRouter() {
   return (
     <Router>
-      <ul>
-        <li>
-          <Link to="/">home</Link>
-        </li>
-        <li>
-          <Link to="/list">list</Link>
-        </li>
-      </ul>
-      <Route path="/" exact component={Index} />
-      <Route path="/list/:id" component={List} />
-      <Route path="/home/" component={Home} />
+      <div className="mainDiv">
+        <div className="leftNav">
+          <h3>一级导航</h3>
+          <ul>
+            <li>
+              <Link to="/">博客首页</Link>
+            </li>
+            <li>
+              <Link to="/video">视频教程</Link>
+            </li>
+            <li>
+              <Link to="/">职场技能</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="rightMain">
+          <Route path="/" exact component={Index} />
+          <Route path="/video" component={Video} />
+        </div>
+      </div>
     </Router>
   );
 }
