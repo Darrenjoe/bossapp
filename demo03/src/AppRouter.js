@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Index from "./Pages/Index";
 import Video from "./Pages/Video";
+import WorkPlace from "./Pages/Workplace";
 import "./index.css";
 
 function AppRouter() {
@@ -18,13 +19,14 @@ function AppRouter() {
               <Link to="/video">视频教程</Link>
             </li>
             <li>
-              <Link to="/">职场技能</Link>
+              <Link to="/workplace">职场技能</Link>
             </li>
           </ul>
         </div>
         <div className="rightMain">
           <Route path="/" exact component={Index} />
           <Route path="/video" component={Video} />
+          <Route path="/workplace" component={WorkPlace} />
         </div>
       </div>
     </Router>
