@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 function Example() {
   const [count, setCount] = useState(0);
+  useEffect(() => {
+    console.log(`useEffect=>You Click ${count} times`);
+  });
   return (
     <div>
       <p>You clicked {count} times</p>
@@ -14,22 +17,5 @@ function Example() {
     </div>
   );
 }
-// class Example extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { count: 0 };
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <p>You clicked {this.state.count} times</p>
-//         <button onClick={this.addCount.bind(this)}>Click me</button>
-//       </div>
-//     );
-//   }
-//   addCount() {
-//     this.setState({ count: this.state.count + 1 });
-//   }
-// }
 
 export default Example;
