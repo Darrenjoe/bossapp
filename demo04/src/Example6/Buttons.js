@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ColorContext, UPDATE_COLOR } from "./Colors";
 
 function Buttons() {
+  const { dispatch } = useContext(ColorContext);
   return (
     <div>
-      <button>红色</button>
-      <button>蓝色</button>
+      <button
+        onClick={() => {
+          dispatch({ type: UPDATE_COLOR, color: "red" });
+        }}
+      >
+        红色
+      </button>
+      <button
+        onClick={() => {
+          dispatch({ type: UPDATE_COLOR, color: "blue" });
+        }}
+      >
+        蓝色
+      </button>
     </div>
   );
 }
