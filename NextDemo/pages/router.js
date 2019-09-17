@@ -16,6 +16,8 @@ const Home = () => {
   Router.events.on("routeChangeComplete", (...args) => {
     console.log("routeChangeComplete->路由变化结束", ...args);
   });
+
+  //   Lazy Loading 模块moudle
   return (
     <div>
       <h2>Router</h2>
