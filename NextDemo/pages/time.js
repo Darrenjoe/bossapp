@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
+
+const One = dynamic(import("../components/one"));
 
 function Time() {
   const [nowTime, setNowTime] = useState(Date.now());
@@ -9,6 +12,7 @@ function Time() {
   return (
     <>
       <div>显示时间为：{nowTime}</div>
+      <One />
       <div>
         <button onClick={changeTime}>改变时间</button>
       </div>
