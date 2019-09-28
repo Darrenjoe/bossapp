@@ -3,6 +3,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import { Row, Col, List, Icon } from "antd";
 import "../static/style/pages/index.css";
+import Author from "../components/Author";
 
 const Home = () => {
   const [mylist, setMylist] = useState([
@@ -59,7 +60,7 @@ const Home = () => {
           />
         </Col>
         <Col className="comm-right" xs={0} sm={0} md={7} lg={5} xl={4}>
-          右侧
+          <Author />
         </Col>
       </Row>
     </div>
