@@ -1,12 +1,14 @@
 import React from "react";
 import Head from "next/head";
 import Header from "../components/Header";
-import { Row, Col, Icon, Breadcrumb } from "antd";
+import { Row, Col, Icon, Breadcrumb, Affix } from "antd";
 import Author from "../components/Author";
 import Advert from "../components/Advert";
 import Footer from "../components/Footer";
 import "../static/style/pages/detailed.css";
 import ReactMarkdown from "react-markdown";
+import MarkNav from "markdown-navbar";
+import "markdown-navbar/dist/navbar.css";
 
 const Detailed = () => {
   let markdown =
@@ -90,6 +92,12 @@ const Detailed = () => {
         <Col className="comm-right" xs={0} sm={0} md={7} lg={5} xl={4}>
           <Author />
           <Advert />
+          <Affix offsetTop={5}>
+            <div className="detailed-nav comm-box">
+              <div className="nav">文章目录</div>
+              <MarkNav className="article" source={markdown} ordered={false} />
+            </div>
+          </Affix>
         </Col>
       </Row>
       <Footer />
