@@ -9,6 +9,7 @@ import "../static/style/pages/detailed.css";
 import ReactMarkdown from "react-markdown";
 import MarkNav from "markdown-navbar";
 import "markdown-navbar/dist/navbar.css";
+import axios from "axios";
 
 const Detailed = () => {
   let markdown =
@@ -103,6 +104,16 @@ const Detailed = () => {
       <Footer />
     </div>
   );
+};
+
+Detailed.getInitialProps = async content => {
+  let id = content.query.id;
+  const promise = new Promise(resolve => {
+    axios("http://127.0.0.1:7001/default/getArticleById/" + id).then(res => {
+      resolve(res.data.data[0]);
+    });
+  });
+  return await promise;
 };
 
 export default Detailed;
