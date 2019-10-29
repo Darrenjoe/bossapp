@@ -6,7 +6,6 @@ import Author from "../components/Author";
 import Advert from "../components/Advert";
 import Footer from "../components/Footer";
 import "../static/style/pages/detailed.css";
-import MarkNav from "markdown-navbar";
 import "markdown-navbar/dist/navbar.css";
 import axios from "axios";
 
