@@ -8,12 +8,11 @@ import Footer from "../components/Footer";
 import "../static/style/pages/detailed.css";
 import "markdown-navbar/dist/navbar.css";
 import axios from "axios";
-
 import marked from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/monokai-sublime.css";
-
 import Tocify from "../components/tocify.tsx";
+import servicePath from "../config/apiUrl";
 
 const Detailed = props => {
   const tocify = new Tocify();
@@ -101,7 +100,7 @@ const Detailed = props => {
 Detailed.getInitialProps = async content => {
   let id = content.query.id;
   const promise = new Promise(resolve => {
-    axios("http://127.0.0.1:7001/default/getArticleById/" + id).then(res => {
+    axios(servicePath.getArticleById + id).then(res => {
       resolve(res.data.data[0]);
     });
   });
