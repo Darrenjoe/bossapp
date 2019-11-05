@@ -48,11 +48,6 @@ const Header = () => {
                 </Menu.Item>
               );
             })}
-            {/* 
-            <Menu.Item key="life">
-              <Icon type="smile" />
-              生活
-            </Menu.Item> */}
           </Menu>
         </Col>
       </Row>
