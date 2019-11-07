@@ -52,7 +52,7 @@ class HomeController extends Controller {
       "FROM_UNIXTIME(article.addTime, '%Y-%m-%d %H:%i:%s') as addTime ," +
       "article.view_count as view_count ," +
       "type.typeName as typeName " +
-      "FROM article LEFT JOIN type ON article.type_id = type.Id" +
+      "FROM article LEFT JOIN type ON article.type_id = type.Id " +
       "WHERE type_id=" +
       id;
     const results = await this.app.mysql.query(sql);
