@@ -36,7 +36,28 @@ function AddArticle() {
             </Col>
           </Row>
         </Col>
-        <Col span={6}></Col>
+        <Col span={6}>
+          <Row>
+            <Col span={24}>
+              <Button size="large">暂存文章</Button>&nbsp;
+              <Button type="primary" size="large">
+                发布文章
+              </Button>
+              <br />
+            </Col>
+            <Col span={24}>
+              <br />
+              <TextArea rows={4} placeholder="文章简介"></TextArea>
+              <br />
+              <div className="introduce-html"></div>
+            </Col>
+            <Col span={12}>
+              <div className="date-select">
+                <DatePicker placeholder="发布日期" size="large" />
+              </div>
+            </Col>
+          </Row>
+        </Col>
       </Row>
     </div>
   );
