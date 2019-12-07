@@ -44,7 +44,7 @@ module.exports = appInfo => {
   };
 
   config.security = {
-    scrf: {
+    csrf: {
       enable: false,
     },
     domainWhiteList: [ '*' ],
