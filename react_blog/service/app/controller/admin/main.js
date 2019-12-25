@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
-const Controller = require('egg').Controller;
+const Controller = require("egg").Controller;
 
 class MainController extends Controller {
   async index() {
     // 首页的文章列表数据
-    this.ctx.body = 'hi api';
+    this.ctx.body = "hi api";
   }
 
   async checkLogin() {
@@ -21,10 +21,15 @@ class MainController extends Controller {
     if (res.length) {
       const openId = new Date().getTime();
       this.ctx.session.openId = { openId };
-      this.ctx.body = { data: '登录成功', openId };
+      this.ctx.body = { data: "登录成功", openId };
     } else {
-      this.ctx.body = { data: '登录失败' };
+      this.ctx.body = { data: "登录失败" };
     }
+  }
+
+  async getTypeInfo() {
+    const resType = await this.app.mysql.select("type");
+    this.ctx.body = { data: resType };
   }
 }
 
