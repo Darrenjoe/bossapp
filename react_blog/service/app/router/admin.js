@@ -12,4 +12,5 @@ module.exports = app => {
     adminauth,
     controller.admin.main.getTypeInfo
   );
+  router.post("/admin/addArticle", adminauth, controller.admin.main.addArticle);
 };
