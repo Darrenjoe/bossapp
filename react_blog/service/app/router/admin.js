@@ -23,4 +23,9 @@ module.exports = app => {
     adminauth,
     controller.admin.main.getArticleList
   );
+  router.get(
+    "/admin/delArticle/:id",
+    adminauth,
+    controller.admin.main.delArticle
+  );
 };
