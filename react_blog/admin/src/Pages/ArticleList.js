@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { List, Row, Col, Modal, message, Button } from "antd";
+import { List, Row, Col, Modal, message, Button, Checkbox } from "antd";
 import axios from "axios";
 import servicePath from "../config/apiUrl";
 import "../static/css/ArticleList.css";
@@ -41,6 +41,10 @@ function ArticleList(props) {
       }
     });
   };
+  // 修改文章跳转方法
+  const updateArticle = id => {
+    props.history.push("/index/add/" + id);
+  };
 
   return (
     <div>
@@ -74,7 +78,15 @@ function ArticleList(props) {
               <Col span={4}>{item.addTime}</Col>
               <Col span={4}>{item.view_count}</Col>
               <Col span={4}>
-                <Button type="primary">修改</Button>&nbsp;
+                <Button
+                  type="primary"
+                  onClick={() => {
+                    updateArticle(item.id);
+                  }}
+                >
+                  修改
+                </Button>
+                &nbsp;
                 <Button
                   onClick={() => {
                     delArticle(item.id);
